@@ -9,19 +9,15 @@ typedef enum {
 } ProcessState;
 
 typedef struct {
-
     int pid;
-
     int burst_time;
-
     int remaining_time;
-
     int priority;
-
     int memory_required;
-
     ProcessState state;
-
 } Process;
 
-#endif
+Process process_create(int pid, int burst_time, int priority, int memory_required);
+const char* process_state_str(ProcessState state);
+
+#endif 
