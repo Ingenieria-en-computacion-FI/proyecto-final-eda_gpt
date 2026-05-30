@@ -1,27 +1,78 @@
+#!/usr/bin/env python3
+"""
+benchmark.py — Benchmarking del simulador Mini-OS
+
+Mide el tiempo de ejecución del simulador C para
+diferentes tamaños de entrada y genera un CSV con resultados.
+
+Uso:
+    python3 scripts/benchmark.py
+"""
+
 import subprocess
 import time
-import pandas as pd
+import csv
+import os
+import sys
 
-results = []
+BINARY  = "./bin/main"
+CSV_OUT = "reports/csv/benchmark.csv"
 
-sizes = [100, 500, 1000, 5000]
 
-for size in sizes:
-    start = time.time()
+def run_simulation(mode: int, n: int) -> float:
+    """Ejecuta el simulador y mide tiempo en segundos."""
+    try:
+        start = time.perf_counter()
+        result = subprocess.run(
+            [BINARY, str(mode), str(n)],
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        end = time.perf_counter()
+        if result.returncode != 0:
+            print(f"  [WARN] Simulador retornó código {result.returncode}", file=sys.stderr)
+        return round(end - start, 6)
+    except FileNotFoundError:
+        print(f"[ERROR] Binario no encontrado: {BINARY}", file=sys.stderr)
+        print("        Ejecuta 'make' primero.", file=sys.stderr)
+        sys.exit(1)
+    except subprocess.TimeoutExpired:
+        print("[WARN] Timeout en simulación", file=sys.stderr)
+        return -1.0
 
-    subprocess.run([
-        "./bin/main",
-        str(size)
-    ])
 
-    end = time.time()
+def run_benchmark() -> list[dict]:
+    sizes   = [10, 50, 100, 500, 1000, 5000]
+    modes   = {1: "FIFO/RR/SJF", 2: "Memoria", 3: "Algoritmos"}
+    results = []
 
-    results.append({
-        "size": size,
-        "time": end - start
-    })
+    print(f"\n{'Modo':<20} {'N':<8} {'Tiempo (s)':<14}")
+    print("-" * 44)
 
-pd.DataFrame(results).to_csv(
-    "reports/csv/benchmark.csv",
-    index=False
-)
+    for mode, label in modes.items():
+        for n in sizes:
+            elapsed = run_simulation(mode, n)
+            row = {"modo": label, "n": n, "tiempo_s": elapsed}
+            results.append(row)
+            print(f"{label:<20} {n:<8} {elapsed:<14.6f}")
+
+    return results
+
+
+def save_results(results: list[dict], path: str):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["modo", "n", "tiempo_s"])
+        writer.writeheader()
+        writer.writerows(results)
+    print(f"\n[✓] Resultados guardados en {path}")
+
+
+if __name__ == "__main__":
+    print("╔══════════════════════════════════════╗")
+    print("║         BENCHMARKING MINI-OS         ║")
+    print("╚══════════════════════════════════════╝")
+
+    results = run_benchmark()
+    save_results(results, CSV_OUT)
