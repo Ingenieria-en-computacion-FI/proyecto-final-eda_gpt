@@ -105,9 +105,9 @@ def plot_scheduler_comparison(df: pd.DataFrame):
 
 
 if __name__ == "__main__":
-    print("╔══════════════════════════════════════╗")
-    print("║       GENERANDO GRÁFICAS             ║")
-    print("╚══════════════════════════════════════╝\n")
+    print("========================================")
+    print("          GENERANDO GRÁFICAS            ")
+    print("========================================\n")
 
     os.makedirs(PNG_DIR, exist_ok=True)
     df = load_data(CSV_IN)
