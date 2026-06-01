@@ -282,7 +282,7 @@ void mm_print(MemoryManager* mm) {
             printf("  [PID=%-4d | start=%4d | size=%4d]\n", cur->pid, cur->start, cur->size);
         cur = cur->next;
     }
-    printf("  Fragmentación externa: %d%%\n", mm_fragmentation(mm));
+    printf("  Fragmentacion externa: %d%%\n", mm_fragmentation(mm));
     printf("====================================\n");
 }
 
