@@ -19,9 +19,9 @@
 
 /* ── Demo Schedulers ── */
 static void demo_schedulers() {
-    printf("\n╔══════════════════════════════════════╗\n");
-    printf("║        DEMO SCHEDULERS               ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("\n==========================================\n");
+    printf("          DEMO SCHEDULERS               \n");
+    printf("==========================================\n");
 
     /* Procesos de ejemplo del proyecto */
     int pids[]   = {1, 2, 3};
@@ -61,9 +61,9 @@ static void demo_schedulers() {
 
 /* ── Demo Memoria ── */
 static void demo_memory() {
-    printf("\n╔══════════════════════════════════════╗\n");
-    printf("║      DEMO ADMINISTRACIÓN MEMORIA     ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("\n==========================================\n");
+    printf("       DEMO ADMINISTRACIÓN MEMORIA      \n");
+    printf("==========================================\n");
 
     MemoryManager* mm = mm_create(1024);
     printf("\n--- Estado inicial ---\n");
@@ -99,9 +99,9 @@ static void demo_memory() {
 
 /* ── Demo Algoritmos ── */
 static void demo_algorithms() {
-    printf("\n╔══════════════════════════════════════╗\n");
-    printf("║         DEMO ALGORITMOS              ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("\n==========================================\n");
+    printf("          DEMO ALGORITMOS               \n");
+    printf("==========================================\n");
 
     /* Procesos para mochila */
     Process procs[5];
@@ -144,9 +144,9 @@ static void demo_algorithms() {
 
 /* ── Main ── */
 int main(int argc, char* argv[]) {
-    printf("╔══════════════════════════════════════╗\n");
-    printf("║   MINI OS SIMULATOR — UNAM 2026-2    ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("==========================================\n");
+    printf("    MINI OS SIMULATOR — UNAM 2026-2     \n");
+    printf("==========================================\n");
 
     int mode = 0;
     if (argc > 1) mode = atoi(argv[1]);
