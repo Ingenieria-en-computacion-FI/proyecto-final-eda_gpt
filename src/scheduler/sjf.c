@@ -46,7 +46,7 @@ void scheduler_run_sjf(Scheduler* s) {
     /* Ordenar por burst_time (Greedy/Merge Sort) */
     greedy_sjf_sort(s->processes, s->count);
 
-    printf("\n=== Simulación SJF (Shortest Job First) ===\n");
+    printf("\n=== Simulacion SJF (Shortest Job First) ===\n");
     printf("%-6s %-10s %-8s %-8s\n", "PID", "Burst", "Inicio", "Fin");
 
     for (int i = 0; i < s->count; i++) {
