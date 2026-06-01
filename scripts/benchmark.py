@@ -70,9 +70,9 @@ def save_results(results: list[dict], path: str):
 
 
 if __name__ == "__main__":
-    print("╔══════════════════════════════════════╗")
-    print("║         BENCHMARKING MINI-OS         ║")
-    print("╚══════════════════════════════════════╝")
+    print("========================================")
+    print("          BENCHMARKING MINI-OS          ")
+    print("========================================\n")
 
     results = run_benchmark()
     save_results(results, CSV_OUT)
