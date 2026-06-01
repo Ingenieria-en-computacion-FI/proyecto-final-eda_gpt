@@ -145,7 +145,7 @@ static void demo_algorithms() {
 /* ── Main ── */
 int main(int argc, char* argv[]) {
     printf("==========================================\n");
-    printf("    MINI OS SIMULATOR — UNAM 2026-2     \n");
+    printf("    MINI OS SIMULADOR   UNAM 2026-2     \n");
     printf("==========================================\n");
 
     int mode = 0;
