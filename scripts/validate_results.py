@@ -69,7 +69,7 @@ def run_validations():
     print("\n[✓] Todas las validaciones pasaron")
 
 if __name__ == "__main__":
-    print("╔══════════════════════════════════════╗")
-    print("║       VALIDANDO RESULTADOS           ║")
-    print("╚══════════════════════════════════════╝\n")
+    print("========================================")
+    print("          VALIDANDO RESULTADOS            ")
+    print("========================================\n")
     run_validations()
