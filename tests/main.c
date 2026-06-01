@@ -22,9 +22,9 @@ void test_rr_scheduler();
 void test_sjf_scheduler();
 
 int main() {
-    printf("╔══════════════════════════════════════╗\n");
-    printf("║         SUITE DE TESTS               ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("========================================\n");
+    printf("          SUITE DE TESTS                \n");
+    printf("========================================\n");
 
     printf("\n[Stack]\n");
     test_stack_push_pop();
@@ -51,8 +51,8 @@ int main() {
     test_rr_scheduler();
     test_sjf_scheduler();
 
-    printf("\n╔══════════════════════════════════════╗\n");
-    printf("║   Todos los tests pasaron ✓          ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("\n========================================\n");
+    printf("   Todos los tests pasaron ✓          \n");
+    printf("===========================================\n");
     return 0;
 }
