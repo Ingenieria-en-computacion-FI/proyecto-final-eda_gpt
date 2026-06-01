@@ -66,7 +66,7 @@ int scheduler_next(Scheduler* s) {
 
 /* ── Ejecutar simulación FIFO completa ── */
 static void run_fifo(Scheduler* s) {
-    printf("\n=== Simulación FIFO ===\n");
+    printf("\n=== Simulacion FIFO ===\n");
     printf("%-6s %-8s %-8s %-12s\n", "PID", "Inicio", "Fin", "Tiempo CPU");
 
     /* Volver a encolar todos los procesos en orden */
@@ -110,7 +110,7 @@ void scheduler_run(Scheduler* s) {
 void scheduler_print_results(Scheduler* s) {
     printf("\n=== Procesos terminados (ordenados por PID) ===\n");
     ll_print(s->finished_list);
-    printf("\n=== Historial de ejecución (pila) ===\n");
+    printf("\n=== Historial de ejecucion (pila) ===\n");
     stack_print(s->history);
 }
 
