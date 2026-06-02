@@ -1,4 +1,5 @@
 /*
+ *
  * main.c — Punto de entrada del simulador de sistema operativo
  *
  * Ejecuta:

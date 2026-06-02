@@ -4,9 +4,9 @@
 
 Integrantes:
 
-Ramirez Olvera Erick Yael /
-Flores Alvarez Roberto Maximiliano /
-Gonzalez Morales Daniel Alejandro /
+Flores Alvarez Roberto Maximiliano 
+Gonzalez Morales Daniel Alejandro 
+Ramirez Olvera Erick Yael 
 Rosas Salazar Jose Eduardo 
 
 ---
