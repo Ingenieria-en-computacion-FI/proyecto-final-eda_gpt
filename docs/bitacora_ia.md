@@ -4,10 +4,10 @@
 
 Integrantes:
 
-Ramirez Olvera Erick Yael
-Flores Alvarez Roberto Maximiliano
-Gonzalez Morales Daniel Alejandro
-Rosas Salazar Jose Eduardo
+Ramirez Olvera Erick Yael /
+Flores Alvarez Roberto Maximiliano /
+Gonzalez Morales Daniel Alejandro /
+Rosas Salazar Jose Eduardo 
 
 ---
 
