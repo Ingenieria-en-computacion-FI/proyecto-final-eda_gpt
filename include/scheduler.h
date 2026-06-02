@@ -7,7 +7,7 @@
 #include "../include/linked_list.h"
 #include "stack.h"
 
-#define MAX_PROCESSES 256
+#define MAX_PROCESSES 256   
 
 /*
 Internamente SCHED_FIFO=0, SCHED_ROUND_ROBIN=1, SCHED_SJF=2

@@ -4,7 +4,7 @@
 /* Lista doblemente ligada de bloques de memoria
    Uso: coalescencia, navegación bidireccional */
 
-typedef struct MemoryBlock {
+typedef struct MemoryBlock {   
     int start;
     int size;
     int free;

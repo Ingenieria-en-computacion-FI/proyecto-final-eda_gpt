@@ -4,7 +4,7 @@
 #include "memory_manager.h" 
 #include "process.h"
 
-/* ── Fuerza Bruta ── */
+/* ── Fuerza Bruta ── */   
 /* Recibe el manejador de memoria y un tamaño.
 Recorre todos los bloques uno por uno hasta encontrar uno libre que sea suficientemente grande. 
  */

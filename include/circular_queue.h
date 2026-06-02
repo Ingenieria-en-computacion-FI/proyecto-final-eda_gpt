@@ -6,7 +6,7 @@
 
 typedef struct CircularQueue CircularQueue;
 
-CircularQueue* cq_create(int capacity);
+CircularQueue* cq_create(int capacity);   
 void cq_enqueue(CircularQueue* cq, int value);
 int cq_dequeue(CircularQueue* cq);
 int cq_peek(CircularQueue* cq);

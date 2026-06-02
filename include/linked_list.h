@@ -4,7 +4,7 @@
 /* Lista ligada simple ordenada por PID
    Uso: almacenar procesos terminados ordenados */
 
-typedef struct LLNode {
+typedef struct LLNode {   
     int pid;
     int burst_time;
     struct LLNode* next;

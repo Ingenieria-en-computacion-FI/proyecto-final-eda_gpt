@@ -5,7 +5,7 @@
    Uso: historial de ejecución, backtracking */
 
 typedef struct Stack Stack;
-
+   
 Stack* stack_create();
 void stack_push(Stack* stack, int value);
 int stack_pop(Stack* stack);

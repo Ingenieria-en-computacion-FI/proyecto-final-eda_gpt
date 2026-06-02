@@ -6,7 +6,7 @@
 
 typedef struct Queue Queue;
 
-Queue* queue_create();
+Queue* queue_create();    
 void   enqueue(Queue* queue, int value);
 int    dequeue(Queue* queue);
 int    queue_peek(Queue* queue);
