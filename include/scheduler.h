@@ -9,6 +9,9 @@
 
 #define MAX_PROCESSES 256
 
+/*
+Internamente SCHED_FIFO=0, SCHED_ROUND_ROBIN=1, SCHED_SJF=2
+*/
 typedef enum {
     SCHED_FIFO,
     SCHED_ROUND_ROBIN,
