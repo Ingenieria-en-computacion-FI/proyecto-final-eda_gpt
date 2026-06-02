@@ -12,7 +12,7 @@ typedef struct LLNode {
 
 typedef struct LinkedList {
     LLNode* head;
-    int size;
+    int size; // Número de nodos en la lista
 } LinkedList;
 
 LinkedList* ll_create();
