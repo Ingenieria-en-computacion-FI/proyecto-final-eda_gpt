@@ -47,8 +47,8 @@ void stack_push(Stack* stack, int value) {
         exit(EXIT_FAILURE);
     }
     node->value = value;
-    node->next  = stack->top;
-    stack->top  = node;
+    node->next  = stack->top; // el nuevo apunta al anterior top
+    stack->top  = node; // top ahora es el nuevo nodo
     stack->size++;
 }
 
