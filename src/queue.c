@@ -52,11 +52,11 @@ void enqueue(Queue* queue, int value) {
     node->next  = NULL;
 
     if (queue->rear == NULL) {
-        queue->front = node;
-        queue->rear  = node;
-    } else {
-        queue->rear->next = node;
-        queue->rear       = node;
+        queue->front = node; // si estaba vacía, front y rear apuntan al mismo
+        queue->rear  = node; 
+    } else { 
+        queue->rear->next = node; // el último apunta al nuevo
+        queue->rear       = node; // rear avanza al nuevo
     }
     queue->size++;
 }
