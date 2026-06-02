@@ -1,11 +1,13 @@
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
 
-#include "memory_manager.h"
+#include "memory_manager.h" 
 #include "process.h"
 
 /* ── Fuerza Bruta ── */
-/* Busca exhaustivamente el primer bloque libre >= size */
+/* Recibe el manejador de memoria y un tamaño.
+Recorre todos los bloques uno por uno hasta encontrar uno libre que sea suficientemente grande. 
+ */
 MemoryBlock* brute_force_find_block(MemoryManager* mm, int size);
 
 /* ── Greedy ── */
@@ -20,7 +22,7 @@ void greedy_sjf_sort(Process* procs, int n);
 
 /* ── Backtracking ── */
 /* Intenta asignar memoria a todos los procesos; si falla, retrocede */
-int backtrack_allocate(MemoryManager* mm, Process* procs, int n, int index);
+int backtrack_allocate(MemoryManager* mm, Process* procs, int n, int index); //index indica en que proceso va
 
 /* ── Divide y Vencerás ── */
 /* Compacta memoria moviendo bloques libres al final */
