@@ -13,7 +13,7 @@ typedef struct MemoryBlock {
     struct MemoryBlock* prev;
 } MemoryBlock;
 
-typedef struct MemoryManager {
+typedef struct MemoryManager { //Administra la memoria total y la lista de bloques
     MemoryBlock* head;
     int total_memory;
 } MemoryManager;
