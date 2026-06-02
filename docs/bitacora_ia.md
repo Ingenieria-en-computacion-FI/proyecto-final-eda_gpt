@@ -2,6 +2,13 @@
 **Curso:** Estructuras de Datos y Algoritmos I — UNAM 2026-2  
 **Herramienta utilizada:** Claude Sonnet (Anthropic)
 
+Integrantes:
+
+Ramirez Olvera Erick Yael
+Flores Alvarez Roberto Maximiliano
+Gonzalez Morales Daniel Alejandro
+Rosas Salazar Jose Eduardo
+
 ---
 
 ## Entrada 1 — Diseño de estructuras de datos
@@ -129,3 +136,6 @@ La IA generó `benchmark.py` con `time.perf_counter()` para mayor precisión que
 **Conclusión:** La IA fue útil para generar estructuras base y detectar patrones algorítmicos. Sin embargo, los errores de punteros 
 (especialmente en listas doblemente ligadas) requirieron revisión y corrección manual.
 El análisis de complejidad y las recurrencias fueron verificados manualmente contra la teoría del curso.
+
+
+
