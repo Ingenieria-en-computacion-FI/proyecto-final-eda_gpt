@@ -2,13 +2,38 @@
 """
 graphs.py — Generación de gráficas de benchmarking
 
-Lee reports/csv/benchmark.csv y genera:
-  1. Tiempo de ejecución por modo y tamaño de entrada
-  2. Comparativa de schedulers
-  3. Curvas de complejidad teórica vs medida
-pip list
+Lee el CSV generado por benchmark.py y produce tres gráficas PNG
+para el reporte técnico que visualizan el rendimiento del simulador.
+
+Gráficas generadas:
+    1. tiempo_por_modo.png        — líneas de tiempo por modo (schedulers,
+                                    memoria, algoritmos) contra tamaño de entrada
+    2. complejidad_comparativa.png — curvas medidas normalizadas vs curvas
+                                    teóricas O(n) y O(n log n) para validar
+                                    el análisis de complejidad experimental
+    3. schedulers_comparativa.png  — barras de tiempo del modo scheduler
+                                    por tamaño de entrada
+
+Flujo:
+    1. Lee reports/csv/benchmark.csv con pandas
+    2. Agrupa y filtra los datos por modo
+    3. Normaliza tiempos al rango [0,1] para comparar formas de curvas
+    4. Exporta cada gráfica como PNG a reports/png/
+
+Entrada:
+    reports/csv/benchmark.csv  — generado por benchmark.py
+
+Salida:
+    reports/png/tiempo_por_modo.png
+    reports/png/complejidad_comparativa.png
+    reports/png/schedulers_comparativa.png
+
 Uso:
     python3 scripts/graphs.py
+
+Requisitos:
+    pip install pandas matplotlib numpy
+    Ejecutar benchmark.py antes de este script
 """
 
 import os

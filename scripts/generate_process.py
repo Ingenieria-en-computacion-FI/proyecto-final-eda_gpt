@@ -2,11 +2,24 @@
 """
 generate_processes.py — Generador de procesos aleatorios para el simulador
 
-Genera un archivo CSV con procesos con campos:
-  pid, burst_time, priority, memory_required
+Genera procesos simulados con valores aleatorios reproducibles (semilla fija)
+y los exporta a CSV para que el simulador C los lea como entrada.
+
+Cada proceso contiene los mismos campos que el struct Process de C:
+    pid, burst_time, priority, memory_required
+
+Flujo:
+    1. Genera n procesos con random.seed(42) para resultados reproducibles
+    2. Imprime la tabla de procesos en consola
+    3. Exporta los procesos a un archivo CSV
+
+Salida:
+    data/inputs/processes.csv  — leído por el simulador C (./bin/main)
 
 Uso:
-    python3 scripts/generate_processes.py [n_procesos] [archivo_salida]
+    python3 scripts/generate_processes.py              # 10 procesos, ruta default
+    python3 scripts/generate_processes.py 500          # 500 procesos, ruta default
+    python3 scripts/generate_processes.py 500 data/inputs/test.csv  # ruta custom
 """
 
 import random

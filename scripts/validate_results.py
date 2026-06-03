@@ -2,11 +2,33 @@
 """
 validate_results.py — Validación de resultados del simulador
 
-Verifica que los resultados del simulador C sean correctos
-comparando con implementaciones de referencia en Python.
+Reimplementa los tres schedulers en Python puro como referencia matemática
+y verifica mediante assertions que los resultados son correctos.
+
+Cada función de simulación es una versión simplificada e independiente
+del scheduler equivalente en C, usada exclusivamente para comparación.
+
+Schedulers validados:
+    FIFO        — verifica tiempos de inicio y fin de cada proceso
+    Round Robin — verifica tiempo total con quantum=2
+    SJF         — verifica tiempo total con procesos ordenados por burst_time
+
+Caso de prueba (mismo ejemplo de la sección 7 del proyecto):
+    P1(burst=5), P2(burst=3), P3(burst=4)
+    Tiempo total esperado: 12 unidades
+
+Flujo:
+    1. Define los procesos de prueba
+    2. Simula cada scheduler en Python
+    3. Compara resultados con assert
+    4. Imprime confirmación o detiene con error si algo falla
 
 Uso:
     python3 scripts/validate_results.py
+
+Nota:
+    No requiere que el simulador C esté compilado.
+    Es una validación matemática independiente.
 """
 
 def simulate_fifo(processes: list[dict]) -> list[dict]:

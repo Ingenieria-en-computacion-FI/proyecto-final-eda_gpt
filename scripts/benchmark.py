@@ -2,11 +2,24 @@
 """
 benchmark.py — Benchmarking del simulador Mini-OS
 
-Mide el tiempo de ejecución del simulador C para
-diferentes tamaños de entrada y genera un CSV con resultados.
+Mide el tiempo de ejecución real del simulador C lanzándolo como subproceso
+para diferentes tamaños de entrada (n = 10, 50, 100, 500, 1000, 5000) y
+tres modos de operación (schedulers, memoria, algoritmos).
+
+Flujo:
+    1. Ejecuta ./bin/main con subprocess.run() por cada combinación (modo, n)
+    2. Mide el tiempo transcurrido con time.perf_counter()
+    3. Acumula los resultados en una lista de diccionarios
+    4. Exporta los resultados a reports/csv/benchmark.csv
+
+Salida:
+    reports/csv/benchmark.csv  — leído por graphs.py para generar gráficas
 
 Uso:
     python3 scripts/benchmark.py
+    
+Requisitos:
+    Compilar el simulador C antes de ejecutar: make
 """
 
 import subprocess
